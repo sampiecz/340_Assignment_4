@@ -1,4 +1,14 @@
-
+/***********************************************************
+ CSCI 340 - Assignment 4 - Spring 2018
+ 
+ Progammer: Sam Piecz
+ Z-ID: Z1732715
+ Section: 1
+ TA: 
+ Date Due: February 22, 2018
+ 
+ Purpose: 
+ ************************************************************/
 int main() {
     Queue q;
     string op;
