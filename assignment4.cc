@@ -153,7 +153,5 @@ void Queue::pop()
         s2.swap(s1);
     }
 
-    return s2.pop();
-
+    s2.pop();
 }
-
