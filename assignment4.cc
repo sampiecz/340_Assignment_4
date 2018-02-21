@@ -9,6 +9,17 @@
  
  Purpose: 
  ************************************************************/
+#include <iostream>
+#include <iomanip>
+#include <string>
+using std::string;
+using std::cout;
+using std::cerr;
+using std::cin;
+using std::endl;
+using std::setw;
+
+#include "assignment4.h"
 int main() {
     Queue q;
     string op;
@@ -39,3 +50,110 @@ int main() {
 
     return 0;
 }
+
+
+/***************************************************************
+ Empty method 
+
+ Use: Says wether or not the object is empty. 
+
+ Parameters: No parameters. 
+
+ Returns: A bool stating wether or not the object is empty.
+***************************************************************/
+bool Queue::empty() const
+{
+    if (s1.empty() && s2.empty())
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
+/***************************************************************
+ Size method 
+
+ Use: Returns Queue's size data member. 
+
+ Parameters: No parameters. 
+
+ Returns: Sum of s1 & s2 
+***************************************************************/
+int Queue::size() const
+{
+    return s1.size() + s2.size();
+}
+
+/***************************************************************
+ Front method 
+
+ Use: Returns the front object in the qArray. If the object is
+ empty it throws an error. 
+
+ Parameters: No parameters. 
+
+ Returns: qArray[qFront] so the front object in the array.
+***************************************************************/
+int Queue::front() 
+{
+    if(s2.empty())
+    {
+        s2.swap(s1);
+    }
+
+    return s2.top();
+}
+
+/***************************************************************
+ Back method 
+
+ Use: Returns the back item in the array. If it doesn't exist
+ it throws an error.  
+
+ Parameters: No parameters. 
+
+ Returns: qArray[qBack] the back item of the array.
+***************************************************************/
+int Queue::back()
+{
+    return s1.top(); 
+}
+
+/***************************************************************
+ Push method 
+
+ Use: Pushes a new item to the Queue object. 
+
+ Parameters: Reference to a constant template called val. 
+
+ Returns: No return.
+***************************************************************/
+void Queue::push(const int& val)
+{
+    s1.push(val);    
+}
+
+/***************************************************************
+ Pop method 
+
+ Use: If empty thow underflow error. Otherwise pop the next
+ object off the Queue ADT. 
+
+ Parameters: No parameters. 
+
+ Returns: No return.
+***************************************************************/
+void Queue::pop()
+{
+    if(s2.empty())
+    {
+        s2.swap(s1);
+    }
+
+    return s2.pop();
+
+}
+

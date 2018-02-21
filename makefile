@@ -12,7 +12,7 @@ assignment4: assignment4.o
 	g++ $(CCFLAGS) -o assignment4.exe assignment4.o
 
 # Rule to compile source code file to object code
-assignment4.o: assignment4.cc
+assignment4.o: assignment4.cc	assignment4.h
 	g++ $(CCFLAGS) -c assignment4.cc
 
 # Pseudo-target to remove object code and executable files
