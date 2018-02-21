@@ -55,7 +55,7 @@ int main() {
 /***************************************************************
  Empty method 
 
- Use: Says wether or not the object is empty. 
+ Use: Says wether or not the Queue is empty. 
 
  Parameters: No parameters. 
 
@@ -76,7 +76,7 @@ bool Queue::empty() const
 /***************************************************************
  Size method 
 
- Use: Returns Queue's size data member. 
+ Use: Returns the sum of both Stack's size. 
 
  Parameters: No parameters. 
 
@@ -90,12 +90,11 @@ int Queue::size() const
 /***************************************************************
  Front method 
 
- Use: Returns the front object in the qArray. If the object is
- empty it throws an error. 
+ Use: Returns the Queue's front element. 
 
  Parameters: No parameters. 
 
- Returns: qArray[qFront] so the front object in the array.
+ Returns: Returns the second stacks top element.
 ***************************************************************/
 int Queue::front() 
 {
@@ -110,12 +109,11 @@ int Queue::front()
 /***************************************************************
  Back method 
 
- Use: Returns the back item in the array. If it doesn't exist
- it throws an error.  
+ Use: Returns the back item in the array. 
 
  Parameters: No parameters. 
 
- Returns: qArray[qBack] the back item of the array.
+ Returns: The top of the first stack. 
 ***************************************************************/
 int Queue::back()
 {
@@ -127,7 +125,7 @@ int Queue::back()
 
  Use: Pushes a new item to the Queue object. 
 
- Parameters: Reference to a constant template called val. 
+ Parameters: Reference to a constant int called val. 
 
  Returns: No return.
 ***************************************************************/
@@ -139,8 +137,7 @@ void Queue::push(const int& val)
 /***************************************************************
  Pop method 
 
- Use: If empty thow underflow error. Otherwise pop the next
- object off the Queue ADT. 
+ Use: Pops the second stack. 
 
  Parameters: No parameters. 
 
