@@ -41,7 +41,11 @@ int main() {
             cerr << "Error input: " << op << endl;
             return 1;
         }
-        cout << setw(3) << q.size() << setw(5) << q.front() << setw(5) << q.back() << endl;
+        if ( q.size() > 0 )
+            cout << setw(3) << q.size() << setw(5) << q.front() << setw(5) << q.back() << endl;
+        else
+            cout << setw(3) << q.size() << endl;
+
         cin >> op;
     }
 
@@ -100,7 +104,11 @@ int Queue::front()
 {
     if(s2.empty())
     {
-        s2.swap(s1);
+        while(!s1.empty())
+        {
+            s2.push(s1.top());
+            s1.pop();
+        }
     }
 
     return s2.top();
@@ -117,6 +125,15 @@ int Queue::front()
 ***************************************************************/
 int Queue::back()
 {
+    if(s1.empty())
+    {
+        while(!s2.empty())
+        {
+            s1.push(s2.top());
+            s2.pop();
+        }
+    }
+
     return s1.top(); 
 }
 
@@ -145,10 +162,6 @@ void Queue::push(const int& val)
 ***************************************************************/
 void Queue::pop()
 {
-    if(s2.empty())
-    {
-        s2.swap(s1);
-    }
-
+    front();
     s2.pop();
 }
